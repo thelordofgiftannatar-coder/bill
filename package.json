@@ -1,0 +1,32 @@
+{
+  "name": "definitive-1-pc",
+  "version": "1.0.0",
+  "description": "Definitive 1# PC - Windows desktop app with a local media vault (GIFs, 4K GIFs, wallpapers)",
+  "main": "src/main.js",
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "dist:portable": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.definitive1.pc",
+    "productName": "Definitive 1# PC",
+    "files": ["src/**/*", "app/**/*", "package.json"],
+    "directories": { "buildResources": "build", "output": "dist" },
+    "artifactName": "Definitive-1-PC-${version}-${os}-${arch}.${ext}",
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

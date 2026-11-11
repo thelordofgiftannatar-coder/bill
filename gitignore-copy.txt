@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# Never commit big media to git (GitHub blocks files > 100 MB)
+vault/
+*.gif
+*.mp4
+*.webm
